@@ -36,7 +36,7 @@ function TabIcon({ d, active, strokeWidth = 2 }: { d: string; active: boolean; s
   );
 }
 
-/** App-style bottom tab bar, "More" sheet and WhatsApp button. The tab bar shows below 1100px. */
+/** App-style bottom tab bar and "More" sheet. The tab bar shows below 1100px. */
 export function MobileNav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -56,10 +56,6 @@ export function MobileNav() {
 
   return (
     <>
-      <a href={SITE.whatsappUrl} aria-label="Chat with us on WhatsApp" className="wa-fab hv-pop">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={ICONS.chat} /><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a3.5 3.5 0 0 1-1.8-1.8l.8-1-1-2L9 9.5z" /></svg>
-      </a>
-
       <nav aria-label="Primary" className="only-narrow" style={{ position: 'fixed', left: 12, right: 12, bottom: 'calc(12px + env(safe-area-inset-bottom))', zIndex: 70, maxWidth: 560, margin: '0 auto', display: 'flex', alignItems: 'stretch', padding: '4px 6px', borderRadius: 22, background: 'rgba(255,255,255,0.9)', backdropFilter: 'saturate(1.8) blur(18px)', WebkitBackdropFilter: 'saturate(1.8) blur(18px)', boxShadow: '0 18px 40px -16px rgba(26,10,46,0.35),0 0 0 1px rgba(26,26,46,0.06)' }}>
         {TABS.map((t) => {
           const active = pathname === t.href;

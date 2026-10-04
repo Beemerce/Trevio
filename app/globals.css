@@ -90,24 +90,3 @@ input::placeholder, textarea::placeholder { color: #9CA3AF; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
-
-/* WhatsApp floating button: bottom-right on desktop, lifted above the tab bar on smaller screens. */
-.wa-fab {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  z-index: 60;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #5ED6F7, #8378FF 60%, #5B247A);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  box-shadow: 0 14px 34px -10px rgba(131, 120, 255, 0.8), 0 0 0 6px rgba(131, 120, 255, 0.12);
-  transition: transform 0.2s;
-}
-@media (max-width: 1099.98px) {
-  .wa-fab { right: 16px; bottom: calc(96px + env(safe-area-inset-bottom)); }
-}

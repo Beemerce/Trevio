@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Noto_Sans_Arabic, Plus_Jakarta_Sans } from 'next/font/google';
+import { LiveChat } from '@/components/chrome/LiveChat';
 import { MobileNav } from '@/components/chrome/MobileNav';
 import { SiteFooter } from '@/components/chrome/SiteFooter';
 import { SiteHeader } from '@/components/chrome/SiteHeader';
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SiteFooter />
           <MobileNav />
         </div>
+        <LiveChat />
       </body>
     </html>
   );

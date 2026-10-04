@@ -8,6 +8,8 @@ export const SITE = {
   email: 'hello@trevio.ai',
   whatsappDisplay: '+974 66005518',
   whatsappUrl: 'https://wa.me/97466005518',
+  /** Public site key for the live chat widget (safe to ship to the browser). */
+  webchat: { gatewayUrl: 'https://webchat.wa-api.cloud', siteKey: 'wc_pk_GxfIxJKsfGr4hWMxx8DkU4uvBCIIlZsy' },
 };
 
 export const NAV = [
