@@ -1,13 +1,18 @@
-/** Stand-in logo from the designs: gradient "t" tile + gradient wordmark. Swap for the real logo files when available. */
-export function Logo({ onDark = false }: { onDark?: boolean }) {
+import Image from 'next/image';
+
+/** Trevio lockup: ribbon mark + spaced wordmark. On dark backgrounds the wordmark switches to white. */
+export function Logo({ onDark = false, priority = false }: { onDark?: boolean; priority?: boolean }) {
   return (
     <>
-      <span style={{ width: 34, height: 34, borderRadius: 10, background: 'var(--grad-icon)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 800, fontSize: 18, boxShadow: onDark ? undefined : '0 6px 16px -6px rgba(131,120,255,0.7)' }}>t</span>
-      <span style={onDark
-        ? { fontWeight: 800, fontSize: 22, letterSpacing: '-0.03em', color: '#fff' }
-        : { fontWeight: 800, fontSize: 22, letterSpacing: '-0.03em', background: 'linear-gradient(90deg,#5B247A,#1BCECF)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>
-        trevio
-      </span>
+      <Image src="/brand/trevio-mark.png" alt="" width={30} height={38} priority={priority} style={{ display: 'block', width: 30, height: 'auto' }} />
+      <Image
+        src={onDark ? '/brand/trevio-wordmark-white.png' : '/brand/trevio-wordmark.png'}
+        alt="Trevio"
+        width={88}
+        height={16}
+        priority={priority}
+        style={{ display: 'block', width: 88, height: 'auto' }}
+      />
     </>
   );
 }

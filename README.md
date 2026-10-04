@@ -29,6 +29,7 @@ If `next dev` fails to load Google Fonts behind a proxy, use `npx next dev --web
 - `components/chrome/`: sticky header (desktop nav ≥ 1100px), footer, app-style bottom tab bar with the "More" sheet, WhatsApp button.
 - `components/pages/<page>/`: one client view per page plus its responsive CSS. The prototype switched layouts by reading `window.innerWidth`; here every breakpoint is a CSS media query, so mobile renders correctly on first paint.
 - `app/globals.css`: brand tokens, base styles and the hover classes (`hv-*`).
+- `public/brand/`: logo assets (full lockup, mark, wordmark, white wordmark for dark backgrounds). `components/chrome/Logo.tsx` renders the header/footer lockup.
 - `lib/site.ts`: Login / Sign Up URLs, WhatsApp number, developer portal, nav items.
 
 ## Contact form
@@ -42,7 +43,6 @@ Payload: `{ source, submittedAt, name, company, email, phone, subject, message }
 
 ## Still placeholder (from the designs)
 
-- Logo: gradient "t" tile and text wordmark in `components/chrome/Logo.tsx`.
 - Social links, legal pages and Careers: `#`.
 - Prices, customer copy and integration lists are design copy and need confirming.
 

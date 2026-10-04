@@ -31,8 +31,8 @@ export function SiteHeader() {
           <a href={SITE.loginUrl} style={{ height: 44, padding: '0 12px', borderRadius: 12, display: 'flex', alignItems: 'center', fontSize: 14.5, fontWeight: 700, color: '#1A1A2E' }}>Login</a>
           <a href={SITE.signUpUrl} className="hv-white" style={{ height: 44, padding: '0 16px', borderRadius: 12, display: 'flex', alignItems: 'center', fontSize: 14.5, fontWeight: 800, color: '#fff', whiteSpace: 'nowrap', background: 'var(--grad-brand)', boxShadow: '0 8px 20px -8px rgba(91,36,122,0.6)' }}>Sign Up</a>
         </div>
-        <Link href="/" aria-label="Trevio home" style={{ display: 'flex', alignItems: 'center', gap: 10, flex: 'none', position: 'absolute', left: 25, top: 21 }}>
-          <Logo />
+        <Link href="/" aria-label="Trevio home" style={{ display: 'flex', alignItems: 'center', gap: 10, flex: 'none', position: 'absolute', left: 25, top: '50%', transform: 'translateY(-50%)' }}>
+          <Logo priority />
         </Link>
       </div>
     </header>
