@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Noto+Sans+Arabic:wght@400;600&amp;display=swap">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFFFF;color:#1A1A2E;font-family:'Plus Jakarta Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#5B247A;text-decoration:none}
+a:hover{color:#8378FF}
+button{font-family:inherit}
+:focus-visible{outline:2px solid #8378FF;outline-offset:2px}
+</style>
+</helmet>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="hgA" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="24" y2="24"><stop offset="0" stop-color="#5ED6F7"></stop><stop offset="1" stop-color="#8378FF"></stop></linearGradient></defs></svg>
+
+<div style="min-height:100vh;background:#FFFFFF;overflow-x:clip;padding-bottom:{{ navPad }}">
+
+<header style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.84);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid rgba(26,26,46,0.06)">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; height: 72px; display: flex; align-items: center; justify-content: flex-end; gap: 24px; position: relative">
+    
+    <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
+      <nav style="display:flex;align-items:center;gap:4px">
+        <a href="Trevio%20Features.dc.html" style="padding:8px 12px;border-radius:8px;font-size:14.5px;font-weight:500;color:#1A1A2E" style-hover="background:#F4F2FF;color:#5B247A">Features</a>
+        <a href="Trevio%20Integrations%20Developers.dc.html" style="padding:8px 12px;border-radius:8px;font-size:14.5px;font-weight:500;color:#1A1A2E" style-hover="background:#F4F2FF;color:#5B247A">Integrations</a>
+        <a href="Trevio%20AI%20First.dc.html" style="padding:8px 12px;border-radius:8px;font-size:14.5px;font-weight:500;color:#1A1A2E" style-hover="background:#F4F2FF;color:#5B247A">AI First</a>
+        <a href="Trevio%20Pricing.dc.html" style="padding:8px 12px;border-radius:8px;font-size:14.5px;font-weight:500;color:#1A1A2E" style-hover="background:#F4F2FF;color:#5B247A">Pricing</a>
+        <a href="Trevio%20About%20Contact.dc.html" style="padding:8px 12px;border-radius:8px;font-size:14.5px;font-weight:500;color:#1A1A2E" style-hover="background:#F4F2FF;color:#5B247A">Contact</a>
+        
+        
+      </nav>
+      <div style="display:flex;align-items:center;gap:10px;flex:none">
+        <a href="#" style="padding:10px 16px;border-radius:10px;font-size:14.5px;font-weight:600;color:#1A1A2E" style-hover="background:#F4F2FF;color:#5B247A">Login</a>
+        <a href="#" style="padding:10px 18px;border-radius:10px;font-size:14.5px;font-weight:700;color:#fff;background:linear-gradient(100deg,#5B247A,#8378FF 70%,#5ED6F7 140%);box-shadow:0 8px 20px -8px rgba(91,36,122,0.6)" style-hover="color:#fff;filter:brightness(1.07)">Sign Up</a>
+      </div>
+    </sc-if>
+    <sc-if value="{{ isNarrow }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;align-items:center;gap:8px">
+        <a href="#" style="height:44px;padding:0 12px;border-radius:12px;display:flex;align-items:center;font-size:14.5px;font-weight:700;color:#1A1A2E">Login</a>
+        <a href="#" style="height:44px;padding:0 16px;border-radius:12px;display:flex;align-items:center;font-size:14.5px;font-weight:800;color:#fff;white-space:nowrap;background:linear-gradient(100deg,#5B247A,#8378FF 70%,#5ED6F7 140%);box-shadow:0 8px 20px -8px rgba(91,36,122,0.6)" style-hover="color:#fff">Sign Up</a>
+      </div>
+    </sc-if>
+  <a href="#top" style="display: flex; align-items: center; gap: 10px; flex: none; justify-content: flex-start; flex-direction: row; position: absolute; left: 25px; top: 21px">
+      <div style="width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#5ED6F7,#8378FF);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;box-shadow:0 6px 16px -6px rgba(131,120,255,0.7)">t</div>
+      <span style="font-weight:800;font-size:22px;letter-spacing:-0.03em;background:linear-gradient(90deg,#5B247A,#1BCECF);-webkit-background-clip:text;background-clip:text;color:transparent">trevio</span>
+    </a></div>
+</header>
+
+<section id="top" data-screen-label="Hero" style="background: radial-gradient(700px 480px at 88% 10%,rgba(94,214,247,0.20),transparent 70%),radial-gradient(620px 460px at 70% 95%,rgba(131,120,255,0.18),transparent 70%),linear-gradient(180deg,#FFFFFF 0%,#F5F7FF 60%,#F1F0FF 100%); padding: clamp(48px,7vw,96px) 0 clamp(64px,8vw,104px); position: relative">
+  <div style="max-width:1240px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));gap:clamp(40px,5vw,72px);align-items:center">
+    <div style="display:flex;flex-direction:column;gap:28px;align-items:flex-start">
+      <h1 style="margin:0;font-size:clamp(40px,5.4vw,70px);line-height:1.04;letter-spacing:-0.04em;font-weight:800;color:#1A1A2E;text-wrap:balance">One Platform. Every Conversation. <span style="background:linear-gradient(90deg,#5B247A 0%,#8378FF 50%,#1BCECF 100%);-webkit-background-clip:text;background-clip:text;color:transparent">Every Channel.</span></h1>
+      <p style="margin:0;max-width:540px;font-size:clamp(17px,1.5vw,19.5px);line-height:1.65;color:#6B7280;text-wrap:pretty">Trevio unifies WhatsApp, Instagram, Facebook, TikTok and web chat in one AI-powered inbox — so your team can answer faster, automate the routine and turn conversations into revenue.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <a href="#" style="white-space:nowrap;height:54px;padding:0 26px;border-radius:12px;display:inline-flex;align-items:center;gap:10px;font-size:16px;font-weight:700;color:#fff;background:linear-gradient(100deg,#5B247A,#8378FF 70%,#5ED6F7 140%);box-shadow:0 14px 30px -12px rgba(91,36,122,0.7)" style-hover="color:#fff;filter:brightness(1.07)">Get Started Free<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+        <a href="#platform" style="white-space:nowrap;height:54px;padding:0 24px;border-radius:12px;display:inline-flex;align-items:center;gap:10px;font-size:16px;font-weight:700;color:#1A1A2E;background:rgba(255,255,255,0.7);border:1.5px solid #D8D6EE" style-hover="color:#5B247A;border-color:#8378FF;background:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>See It in Action</a>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;min-width:0">
+      <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px">
+        <sc-for list="{{ heroChannels }}" as="ch" hint-placeholder-count="5">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+            <div style="width:52px;height:52px;border-radius:15px;display:flex;align-items:center;justify-content:center;transition:transform .4s ease,box-shadow .4s ease;background:{{ ch.bg }};box-shadow:{{ ch.shadow }};transform:{{ ch.tf }}">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ ch.icon }}"></path></svg>
+            </div>
+            <span style="font-size:12px;font-weight:600;color:#6B7280;white-space:nowrap">{{ ch.name }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="padding:4px 0 2px">{{ flowSvg }}</div>
+      <div style="background:#fff;border-radius:18px;box-shadow:0 30px 60px -24px rgba(56,40,140,0.35),0 0 0 1px rgba(131,120,255,0.12);overflow:hidden">
+        <div style="height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border-bottom:1px solid #F0F1F5;background:#FBFBFE">
+          <div style="display:flex;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:#E6E3F5"></span><span style="width:10px;height:10px;border-radius:50%;background:#E6E3F5"></span><span style="width:10px;height:10px;border-radius:50%;background:#E6E3F5"></span></div>
+          <span style="font-size:12.5px;font-weight:700">Unified Inbox</span>
+          <span style="display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;color:#0E9C9D"><span style="width:7px;height:7px;border-radius:50%;background:#1BCECF;box-shadow:0 0 0 3px rgba(27,206,207,0.2)"></span>Live</span>
+        </div>
+        <div style="display:grid;grid-template-columns:{{ dashCols }};min-height:300px">
+          <div style="border-right:1px solid #F0F1F5;padding:8px;display:flex;flex-direction:column;gap:2px">
+            <sc-for list="{{ inbox }}" as="c" hint-placeholder-count="5">
+              <div style="display:flex;gap:10px;align-items:center;padding:9px 10px;border-radius:12px;transition:background .4s;background:{{ c.bg }}">
+                <div style="position:relative;flex:none;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#EDEBFF,#E3F8FD);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#5B247A">{{ c.initials }}<span style="position:absolute;right:-2px;bottom:-2px;width:13px;height:13px;border-radius:50%;border:2px solid #fff;background:{{ c.chColor }}"></span></div>
+                <div style="min-width:0;flex:1;display:flex;flex-direction:column;gap:2px">
+                  <div style="display:flex;justify-content:space-between;gap:6px"><span style="font-size:12.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.name }}</span><span style="font-size:10.5px;color:#9CA3AF;flex:none">{{ c.time }}</span></div>
+                  <span style="font-size:11.5px;color:#6B7280;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.preview }}</span>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          <sc-if value="{{ showThread }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;flex-direction:column;padding:16px 18px;gap:14px;background:linear-gradient(180deg,#FFFFFF,#FAFAFF)">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding-bottom:12px;border-bottom:1px solid #F0F1F5">
+                <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:14px;font-weight:700">{{ cur.name }}</span><span style="font-size:11.5px;color:#6B7280">via {{ cur.chName }}</span></div>
+                <span style="padding:4px 9px;border-radius:999px;background:#F1EFFF;color:#5B247A;font-size:11px;font-weight:600">{{ cur.intent }}</span>
+              </div>
+              <div dir="{{ cur.dir }}" style="align-self:flex-start;max-width:86%;padding:10px 13px;border-radius:14px 14px 14px 4px;background:#F3F4F7;font-size:13px;line-height:1.5;font-family:'Plus Jakarta Sans','Noto Sans Arabic',sans-serif">{{ cur.msg }}</div>
+              <div style="margin-top:auto;border-radius:14px;padding:1px;background:linear-gradient(135deg,#5ED6F7,#8378FF)">
+                <div style="border-radius:13px;background:#fff;padding:12px 13px;display:flex;flex-direction:column;gap:8px">
+                  <span style="display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:#5B247A"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="url(#hgA)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.13-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.13a.5.5 0 0 1 .96 0L14.06 8.5A2 2 0 0 0 15.5 9.94l6.13 1.58a.5.5 0 0 1 0 .96L15.5 14.06a2 2 0 0 0-1.44 1.44l-1.58 6.13a.5.5 0 0 1-.96 0z"></path></svg>Trevio AI · Suggested reply</span>
+                  <span dir="{{ cur.dir }}" style="font-size:13px;line-height:1.5;font-family:'Plus Jakarta Sans','Noto Sans Arabic',sans-serif">{{ cur.ai }}</span>
+                  <div style="display:flex;gap:6px"><span style="padding:6px 12px;border-radius:8px;background:linear-gradient(100deg,#5B247A,#8378FF);color:#fff;font-size:11.5px;font-weight:700">Send</span><span style="padding:6px 12px;border-radius:8px;border:1px solid #E3E1F5;font-size:11.5px;font-weight:600">Edit</span></div>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Channels strip" style="background:#FFFFFF;padding:44px 0 48px;border-bottom:1px solid #EEF0F4">
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;align-items:center;gap:24px">
+    <span style="font-size:12.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#6B7280">Now live on</span>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;row-gap:16px">
+      <sc-for list="{{ stripChannels }}" as="ch" hint-placeholder-count="5">
+        <div style="display:flex;align-items:center;gap:10px;padding:4px clamp(16px,3vw,36px);border-left:{{ ch.divider }}">
+          <span style="width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:{{ ch.bg }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="{{ ch.icon }}"></path></svg></span>
+          <span style="font-size:17px;font-weight:700;letter-spacing:-0.01em">{{ ch.name }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <p style="margin:0;font-size:15px;color:#6B7280;text-align:center">Connect your official business accounts in minutes — every message lands in one shared inbox.</p>
+  </div>
+</section>
+
+<section id="why" data-screen-label="Why Trevio" style="scroll-margin-top:72px;padding:clamp(72px,9vw,120px) 0;background:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:56px">
+    <div style="max-width:720px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px">
+      <span style="font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:linear-gradient(90deg,#5B247A,#1BCECF);-webkit-background-clip:text;background-clip:text;color:transparent">Why Trevio</span>
+      <h2 style="margin:0;font-size:clamp(32px,4vw,50px);line-height:1.08;letter-spacing:-0.035em;font-weight:800;text-wrap:balance">Everything your team needs to win the conversation.</h2>
+      <p style="margin:0;font-size:17px;line-height:1.65;color:#6B7280;max-width:580px">Built for serious businesses across the Gulf and beyond — fast to launch, simple to run, ready to scale.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:{{ whyCols }};gap:22px">
+      <sc-for list="{{ why }}" as="f" hint-placeholder-count="6">
+        <div style="padding:30px;border-radius:16px;border:1px solid #ECEDF2;background:#fff;box-shadow:0 2px 6px rgba(26,26,46,0.04),0 12px 30px -24px rgba(26,26,46,0.25);display:flex;flex-direction:column;gap:14px;transition:all .25s ease" style-hover="border-color:transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#5ED6F7,#8378FF) border-box;box-shadow:0 22px 44px -22px rgba(131,120,255,0.5);transform:translateY(-3px)">
+          <span style="width:48px;height:48px;border-radius:13px;background:linear-gradient(135deg,#5ED6F7,#8378FF);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px -8px rgba(131,120,255,0.7)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ f.icon }}"></path></svg></span>
+          <span style="font-size:19px;font-weight:700;letter-spacing:-0.015em;margin-top:4px">{{ f.title }}</span>
+          <span style="font-size:15px;line-height:1.65;color:#6B7280">{{ f.desc }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="platform" data-screen-label="Platform overview" style="scroll-margin-top:72px;padding:clamp(72px,9vw,120px) 0;background:#F8F9FB;border-top:1px solid #EEF0F4;border-bottom:1px solid #EEF0F4">
+  <div style="max-width:1160px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:56px">
+    <div style="max-width:720px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px">
+      <span style="font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:linear-gradient(90deg,#5B247A,#1BCECF);-webkit-background-clip:text;background-clip:text;color:transparent">Platform</span>
+      <h2 style="margin:0;font-size:clamp(32px,4vw,50px);line-height:1.08;letter-spacing:-0.035em;font-weight:800;text-wrap:balance">Every channel in. Everything you need out.</h2>
+    </div>
+
+    <sc-if value="{{ diagramWide }}" hint-placeholder-val="{{ true }}">
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) 110px minmax(0,1.15fr) 110px minmax(0,1fr);align-items:stretch;min-height:420px">
+        <div style="display:flex;flex-direction:column;justify-content:space-between;padding:6px 0">
+          <sc-for list="{{ stripChannels }}" as="ch" hint-placeholder-count="5">
+            <div style="height:58px;display:flex;align-items:center;gap:12px;padding:0 14px;border-radius:14px;background:#fff;box-shadow:0 8px 22px -16px rgba(26,26,46,0.3),0 0 0 1px #ECEDF2">
+              <span style="width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:{{ ch.bg }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="{{ ch.icon }}"></path></svg></span>
+              <span style="font-size:15px;font-weight:700">{{ ch.name }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="position:relative">{{ connLeft }}</div>
+        <div style="display:flex;align-items:center">
+          <div style="width:100%;border-radius:20px;padding:2px;background:linear-gradient(135deg,#5ED6F7,#8378FF 55%,#5B247A);box-shadow:0 30px 60px -28px rgba(131,120,255,0.7)">
+            <div style="border-radius:18px;background:#fff;padding:24px;display:flex;flex-direction:column;gap:16px">
+              <div style="display:flex;align-items:center;gap:12px"><span style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#5ED6F7,#8378FF);display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg></span><div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:18px;font-weight:800;letter-spacing:-0.02em">Trevio Inbox</span><span style="font-size:13px;color:#6B7280">AI-powered · Shared · Real-time</span></div></div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <div style="height:10px;border-radius:6px;background:#F1F2F6;width:100%"></div>
+                <div style="height:10px;border-radius:6px;background:#F1F2F6;width:78%"></div>
+                <div style="height:10px;border-radius:6px;background:linear-gradient(90deg,rgba(94,214,247,0.45),rgba(131,120,255,0.45));width:62%"></div>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px"><span style="padding:4px 10px;border-radius:999px;background:#F4F2FF;color:#5B247A;font-size:12px;font-weight:600">AI replies</span><span style="padding:4px 10px;border-radius:999px;background:#F4F2FF;color:#5B247A;font-size:12px;font-weight:600">Routing</span><span style="padding:4px 10px;border-radius:999px;background:#E6FAFA;color:#0B7F80;font-size:12px;font-weight:600">Contacts</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="position:relative">{{ connRight }}</div>
+        <div style="display:flex;flex-direction:column;justify-content:space-around;gap:16px">
+          <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="3">
+            <div style="padding:18px;border-radius:16px;background:#fff;box-shadow:0 10px 26px -18px rgba(26,26,46,0.35),0 0 0 1px #ECEDF2;display:flex;align-items:center;gap:12px">
+              <span style="flex:none;width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,#5B247A,#1BCECF);display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ p.icon }}"></path></svg></span>
+              <div style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:16px;font-weight:800">{{ p.name }}</span><span style="font-size:12.5px;color:#6B7280;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.tag }}</span></div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ diagramStacked }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;align-items:center">
+        <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;width:100%;max-width:420px">
+          <sc-for list="{{ stripChannels }}" as="ch" hint-placeholder-count="5">
+            <span style="justify-self:center;width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;background:{{ ch.bg }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ ch.icon }}"></path></svg></span>
+          </sc-for>
+        </div>
+        <div style="width:2px;height:36px;background:linear-gradient(#5ED6F7,#8378FF)"></div>
+        <div style="width:100%;max-width:420px;border-radius:18px;padding:2px;background:linear-gradient(135deg,#5ED6F7,#8378FF 55%,#5B247A)"><div style="border-radius:16px;background:#fff;padding:18px;display:flex;align-items:center;gap:12px"><span style="width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#5ED6F7,#8378FF);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg></span><div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:17px;font-weight:800">Trevio Inbox</span><span style="font-size:12.5px;color:#6B7280">AI-powered · Shared · Real-time</span></div></div></div>
+        <div style="width:2px;height:36px;background:linear-gradient(#8378FF,#1BCECF)"></div>
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100%;max-width:420px">
+          <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="3">
+            <div style="padding:14px 8px;border-radius:14px;background:#fff;box-shadow:0 0 0 1px #ECEDF2;display:flex;flex-direction:column;align-items:center;gap:8px"><span style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#5B247A,#1BCECF);display:flex;align-items:center;justify-content:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ p.icon }}"></path></svg></span><span style="font-size:13.5px;font-weight:800">{{ p.name }}</span></div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px 40px;padding-top:8px">
+      <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="3">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <span style="font-size:18px;font-weight:800;letter-spacing:-0.015em">{{ p.name }}</span>
+          <sc-for list="{{ p.bullets }}" as="b" hint-placeholder-count="3">
+            <span style="display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.55;color:#4B5163"><svg style="flex:none;margin-top:2px" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1BCECF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>{{ b }}</span>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="ai" data-screen-label="AI highlight" style="scroll-margin-top:72px;padding:clamp(80px,10vw,136px) 0;background:radial-gradient(800px 480px at 50% 0%,rgba(131,120,255,0.22),transparent 65%),#0D1117;color:#fff">
+  <div style="max-width:1160px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;align-items:center;gap:52px">
+    <div style="max-width:780px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px">
+      <span style="padding:6px 12px;border-radius:999px;background:rgba(131,120,255,0.14);border:1px solid rgba(131,120,255,0.35);font-size:13px;font-weight:700;color:#CFCBFF;white-space:nowrap">AI First</span>
+      <h2 style="margin:0;font-size:clamp(34px,4.6vw,60px);line-height:1.05;letter-spacing:-0.04em;font-weight:800;text-wrap:balance;background:linear-gradient(90deg,#5ED6F7,#8378FF 55%,#C7B8FF);-webkit-background-clip:text;background-clip:text;color:transparent">AI that works the front line with you.</h2>
+      <p style="margin:0;font-size:18px;line-height:1.7;color:#A6ABC4;max-width:640px">Trevio AI learns your products, policies and tone of voice. It resolves routine requests on its own, drafts the rest for your team, and connects to the tools you already run.</p>
+    </div>
+    <div style="width:100%;border-radius:22px;padding:1.5px;background:linear-gradient(120deg,rgba(94,214,247,0.9),rgba(131,120,255,0.7) 50%,rgba(27,206,207,0.8));box-shadow:0 0 80px -24px rgba(131,120,255,0.6)">
+      <div style="border-radius:21px;background:linear-gradient(180deg,#151A2B,#10131D);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))">
+        <div style="padding:clamp(28px,3.5vw,44px);display:flex;flex-direction:column;gap:16px;border-right:1px solid rgba(255,255,255,0.07)">
+          <span style="width:48px;height:48px;border-radius:13px;background:linear-gradient(135deg,#5ED6F7,#8378FF);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px -8px rgba(94,214,247,0.7)"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8M4 8h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2zM2 14h2M20 14h2M15 13v2M9 13v2"></path></svg></span>
+          <span style="font-size:21px;font-weight:700;letter-spacing:-0.02em">AI Agents</span>
+          <span style="font-size:15.5px;line-height:1.65;color:#A6ABC4">Resolve order tracking, bookings and FAQs end to end — 24/7, in Arabic and English, on every channel.</span>
+        </div>
+        <div style="padding:clamp(28px,3.5vw,44px);display:flex;flex-direction:column;gap:16px;border-right:1px solid rgba(255,255,255,0.07)">
+          <span style="width:48px;height:48px;border-radius:13px;background:linear-gradient(135deg,#8378FF,#5B247A);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px -8px rgba(131,120,255,0.8)"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.13-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.13a.5.5 0 0 1 .96 0L14.06 8.5A2 2 0 0 0 15.5 9.94l6.13 1.58a.5.5 0 0 1 0 .96L15.5 14.06a2 2 0 0 0-1.44 1.44l-1.58 6.13a.5.5 0 0 1-.96 0z"></path></svg></span>
+          <span style="font-size:21px;font-weight:700;letter-spacing:-0.02em">AI Copilot</span>
+          <span style="font-size:15.5px;line-height:1.65;color:#A6ABC4">Suggested replies, thread summaries and one-click translation that keep every agent on-brand and fast.</span>
+        </div>
+        <div style="padding:clamp(28px,3.5vw,44px);display:flex;flex-direction:column;gap:16px">
+          <span style="width:48px;height:48px;border-radius:13px;background:linear-gradient(135deg,#1BCECF,#5ED6F7);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px -8px rgba(27,206,207,0.7)"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5M9 8V2M15 8V2M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8z"></path></svg></span>
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span style="font-size:21px;font-weight:700;letter-spacing:-0.02em">MCP Connector</span><span style="padding:3px 9px;border-radius:999px;background:rgba(27,206,207,0.14);border:1px solid rgba(27,206,207,0.45);color:#1BCECF;font-size:11.5px;font-weight:700;letter-spacing:0.04em">MCP</span></div>
+          <span style="font-size:15.5px;line-height:1.65;color:#A6ABC4">Plug Trevio into any AI model or internal tool through the Model Context Protocol — your data, your rules.</span>
+        </div>
+      </div>
+    </div>
+    <a href="#" style="white-space:nowrap;height:54px;padding:0 28px;border-radius:12px;display:inline-flex;align-items:center;gap:10px;font-size:16px;font-weight:700;color:#fff;border:1.5px solid transparent;background:linear-gradient(#0D1117,#0D1117) padding-box,linear-gradient(100deg,#5ED6F7,#8378FF,#1BCECF) border-box" style-hover="color:#fff;background:linear-gradient(#161B2A,#161B2A) padding-box,linear-gradient(100deg,#5ED6F7,#8378FF,#1BCECF) border-box;box-shadow:0 0 30px -6px rgba(131,120,255,0.6)">Explore Trevio AI<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+  </div>
+</section>
+
+<section data-screen-label="Mini Apps" style="padding:clamp(72px,9vw,128px) 0;background:#FFFFFF">
+  <div style="max-width:1240px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(40px,6vw,88px);align-items:center">
+    <div style="display:flex;flex-direction:column;gap:20px;max-width:500px">
+      <span style="font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:linear-gradient(90deg,#5B247A,#1BCECF);-webkit-background-clip:text;background-clip:text;color:transparent;align-self:flex-start">Mini Apps</span>
+      <h2 style="margin:0;font-size:clamp(30px,3.6vw,46px);line-height:1.1;letter-spacing:-0.035em;font-weight:800;text-wrap:balance">Your tools, right inside the conversation.</h2>
+      <p style="margin:0;font-size:17px;line-height:1.7;color:#6B7280;text-wrap:pretty">Mini Apps open beside every chat — so agents can check a customer record, update a deal or book a slot without ever switching tabs.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:15.5px">
+        <span style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1BCECF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>Built-in CRM, orders and booking apps</span>
+        <span style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1BCECF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>Two-way sync with your existing systems</span>
+        <span style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1BCECF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>Build your own with the Mini Apps SDK</span>
+      </div>
+    </div>
+    <div style="border-radius:24px;padding:clamp(16px,2.6vw,32px);background:radial-gradient(420px 300px at 100% 0%,rgba(94,214,247,0.22),transparent 70%),linear-gradient(135deg,#F6F4FF,#EFFAFD)">
+      <div style="background:#fff;border-radius:16px;box-shadow:0 24px 54px -26px rgba(56,40,140,0.4);overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))">
+        <div style="display:flex;flex-direction:column;border-right:1px solid #F0F1F5">
+          <div style="display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid #F0F1F5">
+            <div style="position:relative;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#EDEBFF,#E3F8FD);display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:700;color:#5B247A">FA<span style="position:absolute;right:-2px;bottom:-2px;width:13px;height:13px;border-radius:50%;border:2px solid #fff;background:#25D366"></span></div>
+            <div style="display:flex;flex-direction:column;gap:1px"><span style="font-size:14px;font-weight:700">Fahad Al-Kuwari</span><span style="font-size:11.5px;color:#6B7280">WhatsApp · online</span></div>
+          </div>
+          <div style="flex:1;padding:16px;display:flex;flex-direction:column;gap:10px;background:#FAFAFC">
+            <div style="align-self:flex-start;max-width:85%;padding:10px 12px;border-radius:14px 14px 14px 4px;background:#fff;box-shadow:0 0 0 1px #EEF0F4;font-size:13px;line-height:1.5">Hi, I'd like to upgrade our plan to 20 seats.</div>
+            <div style="align-self:flex-end;max-width:85%;padding:10px 12px;border-radius:14px 14px 4px 14px;background:linear-gradient(100deg,#5B247A,#8378FF);color:#fff;font-size:13px;line-height:1.5">Great — I've opened your account. Updating it now.</div>
+            <div style="align-self:flex-start;max-width:85%;padding:10px 12px;border-radius:14px 14px 14px 4px;background:#fff;box-shadow:0 0 0 1px #EEF0F4;font-size:13px;line-height:1.5">Perfect, thank you! 🙏</div>
+          </div>
+          <div style="padding:12px 14px;border-top:1px solid #F0F1F5;display:flex;align-items:center;gap:8px"><span style="flex:1;height:36px;border-radius:10px;background:#F4F5F8;display:flex;align-items:center;padding:0 12px;font-size:12.5px;color:#9CA3AF">Type a reply…</span><span style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#5ED6F7,#8378FF);display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4zM22 2 11 13"></path></svg></span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;background:#fff">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #F0F1F5"><span style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700"><span style="width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,#5B247A,#1BCECF);display:flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"></path></svg></span>CRM</span><span style="font-size:11px;color:#6B7280">Mini App</span></div>
+          <div style="padding:16px;display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:800">Al-Kuwari Trading</span><span style="font-size:12px;color:#6B7280">Account owner · Mariam S.</span></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+              <div style="padding:9px 10px;border-radius:10px;background:#F8F9FB;display:flex;flex-direction:column;gap:2px"><span style="font-size:10.5px;color:#6B7280">Plan</span><span style="font-size:13px;font-weight:700">Growth</span></div>
+              <div style="padding:9px 10px;border-radius:10px;background:#F8F9FB;display:flex;flex-direction:column;gap:2px"><span style="font-size:10.5px;color:#6B7280">Seats</span><span style="font-size:13px;font-weight:700">12 → 20</span></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:11px;font-weight:700;color:#6B7280;letter-spacing:0.06em;text-transform:uppercase">Deal stage</span><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px"><span style="height:6px;border-radius:4px;background:linear-gradient(90deg,#5ED6F7,#8378FF)"></span><span style="height:6px;border-radius:4px;background:linear-gradient(90deg,#5ED6F7,#8378FF)"></span><span style="height:6px;border-radius:4px;background:linear-gradient(90deg,#5ED6F7,#8378FF)"></span><span style="height:6px;border-radius:4px;background:#EEF0F4"></span></div><span style="font-size:12px;font-weight:600">Negotiation</span></div>
+            <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:11px;font-weight:700;color:#6B7280;letter-spacing:0.06em;text-transform:uppercase">Tags</span><div style="display:flex;flex-wrap:wrap;gap:5px"><span style="padding:3px 8px;border-radius:999px;background:#F4F2FF;color:#5B247A;font-size:11px;font-weight:600">Upsell</span><span style="padding:3px 8px;border-radius:999px;background:#E6FAFA;color:#0B7F80;font-size:11px;font-weight:600">Key account</span></div></div>
+            <span style="height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;background:linear-gradient(100deg,#5B247A,#8378FF)">Update deal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="developers" data-screen-label="Developer portal" style="scroll-margin-top:72px;padding:clamp(72px,9vw,120px) 0;background:linear-gradient(120deg,rgba(94,214,247,0.08),rgba(131,120,255,0.10));border-top:1px solid #EEF0F4;border-bottom:1px solid #EEF0F4">
+  <div style="max-width:820px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px">
+    <span style="font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:linear-gradient(90deg,#5B247A,#1BCECF);-webkit-background-clip:text;background-clip:text;color:transparent">Developers</span>
+    <h2 style="margin:0;font-size:clamp(30px,3.8vw,48px);line-height:1.1;letter-spacing:-0.035em;font-weight:800;text-wrap:balance">Send your first message in minutes.</h2>
+    <p style="margin:0;font-size:17px;line-height:1.65;color:#6B7280;max-width:580px">A clean REST API, webhooks and SDKs for the WhatsApp Business Platform and every Trevio channel — documented end to end.</p>
+    <div style="width:100%;text-align:left;border-radius:16px;background:#0D1117;box-shadow:0 30px 60px -30px rgba(13,17,23,0.7),0 0 0 1px rgba(131,120,255,0.2);overflow:hidden;margin-top:8px">
+      <div style="height:42px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border-bottom:1px solid rgba(255,255,255,0.07)"><div style="display:flex;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:#2A3042"></span><span style="width:10px;height:10px;border-radius:50%;background:#2A3042"></span><span style="width:10px;height:10px;border-radius:50%;background:#2A3042"></span></div><span style="font:500 12px ui-monospace,SFMono-Regular,Menlo,monospace;color:#7A8198">send-message.sh</span><span style="font:600 11px ui-monospace,Menlo,monospace;color:#1BCECF">cURL</span></div>
+      <div style="padding:20px 22px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;line-height:1.8;color:#C9D1E3;overflow:auto;white-space:pre">
+<div><span style="color:#5ED6F7">curl</span> -X POST https://api.wa-api.cloud/v1/messages \</div><div>  -H <span style="color:#7EE7E8">"Authorization: Bearer $TREVIO_API_KEY"</span> \</div><div>  -H <span style="color:#7EE7E8">"Content-Type: application/json"</span> \</div><div>  -d <span style="color:#7EE7E8">'{</span></div><div><span style="color:#7EE7E8">    </span><span style="color:#A9A2FF">"channel"</span><span style="color:#7EE7E8">: "whatsapp",</span></div><div><span style="color:#7EE7E8">    </span><span style="color:#A9A2FF">"to"</span><span style="color:#7EE7E8">: "+97450000000",</span></div><div><span style="color:#7EE7E8">    </span><span style="color:#A9A2FF">"text"</span><span style="color:#7EE7E8">: "Your order is on its way 🚚"</span></div><div><span style="color:#7EE7E8">  }'</span></div></div>
+    </div>
+    <a href="https://dev.wa-api.cloud" style="margin-top:8px;white-space:nowrap;height:54px;padding:0 26px;border-radius:12px;display:inline-flex;align-items:center;gap:10px;font-size:16px;font-weight:700;color:#fff;background:linear-gradient(100deg,#5B247A,#8378FF 70%,#5ED6F7 140%);box-shadow:0 14px 30px -12px rgba(91,36,122,0.7)" style-hover="color:#fff;filter:brightness(1.07)">Open Developer Portal<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"></path></svg></a>
+    <span style="font:500 13px ui-monospace,Menlo,monospace;color:#6B7280">dev.wa-api.cloud</span>
+  </div>
+</section>
+
+<section data-screen-label="Industries" style="padding:clamp(72px,9vw,120px) 0;background:#FFFFFF">
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;align-items:center;gap:48px">
+    <div style="max-width:680px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px">
+      <span style="font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:linear-gradient(90deg,#5B247A,#1BCECF);-webkit-background-clip:text;background-clip:text;color:transparent">Industries</span>
+      <h2 style="margin:0;font-size:clamp(30px,3.8vw,48px);line-height:1.1;letter-spacing:-0.035em;font-weight:800;text-wrap:balance">Trusted by teams in every industry.</h2>
+    </div>
+    <div style="width:100%;display:grid;grid-template-columns:{{ indCols }};gap:14px">
+      <sc-for list="{{ industries }}" as="ind" hint-placeholder-count="8">
+        <div style="height:64px;border-radius:999px;border:1px solid #E6E7EE;background:#fff;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 18px;font-size:15px;font-weight:700;color:#1A1A2E;cursor:default;transition:all .25s ease" style-hover="border-color:transparent;color:#fff;background:linear-gradient(100deg,#5B247A,#8378FF 60%,#5ED6F7);box-shadow:0 14px 30px -14px rgba(131,120,255,0.7)">
+          <svg style="flex:none" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ ind.icon }}"></path></svg>
+          <span style="white-space:nowrap">{{ ind.name }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="CTA banner" style="padding:clamp(72px,9vw,112px) 0;background:linear-gradient(110deg,#5B247A 0%,#8378FF 55%,#5ED6F7 100%);color:#fff">
+  <div style="max-width:900px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px">
+    <h2 style="margin:0;font-size:clamp(34px,4.6vw,58px);line-height:1.06;letter-spacing:-0.04em;font-weight:800;color:#fff;text-wrap:balance">Ready to bring every conversation together?</h2>
+    <p style="margin:0;font-size:18.5px;line-height:1.6;color:#fff;max-width:600px">Launch in an afternoon. Our Doha team will help you connect channels and train your AI — at no cost.</p>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:8px">
+      <a href="#" style="white-space:nowrap;height:54px;padding:0 28px;border-radius:12px;display:inline-flex;align-items:center;font-size:16px;font-weight:800;color:#5B247A;background:#fff;box-shadow:0 14px 30px -14px rgba(26,10,46,0.6)" style-hover="color:#5B247A;transform:translateY(-1px)">Get Started Free</a>
+      <a href="Trevio%20About%20Contact.dc.html#contact-form" style="white-space:nowrap;height:54px;padding:0 26px;border-radius:12px;display:inline-flex;align-items:center;font-size:16px;font-weight:700;color:#fff;border:1.5px solid #fff" style-hover="color:#fff;background:rgba(255,255,255,0.14)">Talk to Sales</a>
+    </div>
+  </div>
+</section>
+
+<footer id="contact" data-screen-label="Footer" style="background:#0D1117;color:#fff;padding:72px 0 32px">
+  <div style="max-width:1240px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:56px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:40px 32px">
+      <div style="display:flex;flex-direction:column;gap:18px;min-width:220px">
+        <div style="display:flex;align-items:center;gap:10px"><div style="width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#5ED6F7,#8378FF);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px">t</div><span style="font-weight:800;font-size:22px;letter-spacing:-0.03em;color:#fff">trevio</span></div>
+        <span style="font-size:14.5px;line-height:1.65;color:#9AA1B5;max-width:260px">Trevio AI Solutions — AI-powered omnichannel engagement, built in Doha.</span>
+        <div style="display:flex;gap:10px">
+          <a href="#" aria-label="LinkedIn" style="width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;color:#C9CDE0" style-hover="background:linear-gradient(135deg,#5ED6F7,#8378FF);color:#fff"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"></path></svg></a>
+          <a href="#" aria-label="X" style="width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;color:#C9CDE0" style-hover="background:linear-gradient(135deg,#5ED6F7,#8378FF);color:#fff"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 4l16 16M20 4 4 20"></path></svg></a>
+          <a href="#" aria-label="Instagram" style="width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;color:#C9CDE0" style-hover="background:linear-gradient(135deg,#5ED6F7,#8378FF);color:#fff"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zM16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"></path></svg></a>
+          <a href="#" aria-label="TikTok" style="width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;color:#C9CDE0" style-hover="background:linear-gradient(135deg,#5ED6F7,#8378FF);color:#fff"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V3a5 5 0 0 0 5 5"></path></svg></a>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px"><span style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase">Quick Links</span><a href="#why" style="font-size:14.5px;color:#9AA1B5" style-hover="color:#fff">Features</a><a href="Trevio%20Integrations%20Developers.dc.html" style="font-size:14.5px;color:#9AA1B5" style-hover="color:#fff">Integrations</a><a href="Trevio%20AI%20First.dc.html" style="font-size:14.5px;color:#9AA1B5" style-hover="color:#fff">AI First</a><a href="Trevio%20Pricing.dc.html" style="font-size:14.5px;color:#9AA1B5" style-hover="color:#fff">Pricing</a></div>
+      <div style="display:flex;flex-direction:column;gap:14px"><span style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase">Explore</span><a href="Trevio%20About%20Contact.dc.html" style="font-size:14.5px;color:#9AA1B5" style-hover="color:#fff">About us</a><a href="https://dev.wa-api.cloud" style="font-size:14.5px;color:#9AA1B5" style-hover="color:#fff">Developer portal</a><a href="#" style="font-size:14.5px;color:#9AA1B5" style-hover="color:#fff">Mini Apps</a><a href="#" style="font-size:14.5px;color:#9AA1B5" style-hover="color:#fff">Careers</a></div>
+      <div style="display:flex;flex-direction:column;gap:14px"><span style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase">Legal</span><a href="#" style="font-size:14.5px;color:#9AA1B5" style-hover="color:#fff">Privacy policy</a><a href="#" style="font-size:14.5px;color:#9AA1B5" style-hover="color:#fff">Terms of service</a><a href="#" style="font-size:14.5px;color:#9AA1B5" style-hover="color:#fff">Data processing</a><a href="#" style="font-size:14.5px;color:#9AA1B5" style-hover="color:#fff">Security</a></div>
+      <div style="display:flex;flex-direction:column;gap:14px"><span style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase">Contact</span><span style="font-size:14.5px;line-height:1.6;color:#9AA1B5">West Bay, Doha<br>State of Qatar</span><a href="mailto:hello@trevio.ai" style="font-size:14.5px;color:#9AA1B5" style-hover="color:#fff">hello@trevio.ai</a><a href="#" style="font-size:14.5px;color:#9AA1B5" style-hover="color:#fff">Chat on WhatsApp</a></div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.08);font-size:13.5px;color:#7A8198"><span>© 2026 Trevio AI Solutions. All rights reserved.</span><span>Doha, Qatar</span></div>
+  </div>
+</footer>
+
+<a href="#" aria-label="Chat with us on WhatsApp" style="position:fixed;right:{{ waRight }};bottom:{{ waBottom }};z-index:60;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#5ED6F7,#8378FF 60%,#5B247A);display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 14px 34px -10px rgba(131,120,255,0.8),0 0 0 6px rgba(131,120,255,0.12);transition:transform .2s" style-hover="color:#fff;transform:scale(1.07)">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a3.5 3.5 0 0 1-1.8-1.8l.8-1-1-2L9 9.5z"></path></svg>
+</a>
+<sc-if value="{{ isNarrow }}" hint-placeholder-val="{{ false }}">
+  <nav aria-label="Primary" style="position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:70;max-width:560px;margin:0 auto;display:flex;align-items:stretch;padding:4px 6px;border-radius:22px;background:rgba(255,255,255,0.9);backdrop-filter:saturate(1.8) blur(18px);-webkit-backdrop-filter:saturate(1.8) blur(18px);box-shadow:0 18px 40px -16px rgba(26,10,46,0.35),0 0 0 1px rgba(26,26,46,0.06)">
+    <a href="#top" aria-label="Home" style="flex:1;min-width:0;min-height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;font-weight:800;color:#5B247A;background:none;border:none;cursor:pointer;padding:0;-webkit-tap-highlight-color:transparent" style-hover="color:#5B247A"><span style="width:46px;height:30px;border-radius:999px;background:linear-gradient(100deg,#5B247A,#8378FF 70%,#5ED6F7 140%);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px -6px rgba(131,120,255,0.8)"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zM9 22V12h6v10"></path></svg></span><span>Home</span></a><a href="Trevio%20Features.dc.html" aria-label="Features" style="flex:1;min-width:0;min-height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;font-weight:600;color:#6B7280;background:none;border:none;cursor:pointer;padding:0;-webkit-tap-highlight-color:transparent" style-hover="color:#1A1A2E"><span style="width:46px;height:30px;border-radius:999px;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"></path></svg></span><span>Features</span></a><a href="Trevio%20AI%20First.dc.html" aria-label="AI First" style="flex:1;min-width:0;min-height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;font-weight:600;color:#6B7280;background:none;border:none;cursor:pointer;padding:0;-webkit-tap-highlight-color:transparent" style-hover="color:#1A1A2E"><span style="width:46px;height:30px;border-radius:999px;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.13-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.13a.5.5 0 0 1 .96 0L14.06 8.5A2 2 0 0 0 15.5 9.94l6.13 1.58a.5.5 0 0 1 0 .96L15.5 14.06a2 2 0 0 0-1.44 1.44l-1.58 6.13a.5.5 0 0 1-.96 0z"></path></svg></span><span>AI First</span></a><a href="Trevio%20Pricing.dc.html" aria-label="Pricing" style="flex:1;min-width:0;min-height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;font-weight:600;color:#6B7280;background:none;border:none;cursor:pointer;padding:0;-webkit-tap-highlight-color:transparent" style-hover="color:#1A1A2E"><span style="width:46px;height:30px;border-radius:999px;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4zM7.5 7.5h.01"></path></svg></span><span>Pricing</span></a><button onClick="{{ toggleMenu }}" aria-label="More" style="flex:1;min-width:0;min-height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;font-weight:600;color:#6B7280;background:none;border:none;cursor:pointer;padding:0;-webkit-tap-highlight-color:transparent"><span style="width:46px;height:30px;border-radius:999px;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h.01M12 12h.01M19 12h.01"></path></svg></span><span>More</span></button>
+  </nav>
+</sc-if>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeMenu }}" style="position:fixed;inset:0;z-index:80;background:rgba(13,17,23,0.45);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)"></div>
+  <div role="dialog" aria-label="More" style="position:fixed;left:0;right:0;bottom:0;z-index:90;max-width:600px;margin:0 auto;border-radius:26px 26px 0 0;background:#fff;box-shadow:0 -20px 50px -20px rgba(26,10,46,0.4);padding:10px 20px calc(24px + env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:18px">
+    <span style="align-self:center;width:40px;height:5px;border-radius:5px;background:#E3E5EC"></span>
+    <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:18px;font-weight:800;letter-spacing:-0.02em">More from Trevio</span><button onClick="{{ closeMenu }}" aria-label="Close" style="width:44px;height:44px;border-radius:12px;border:none;background:#F4F5F8;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#1A1A2E"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"></path></svg></button></div>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">
+      <a href="Trevio%20Integrations%20Developers.dc.html" onClick="{{ closeMenu }}" style="padding:16px;border-radius:16px;background:#F8F9FB;border:1px solid #EEF0F4;display:flex;flex-direction:column;gap:10px;color:#1A1A2E;min-height:44px" style-hover="color:#1A1A2E;border-color:#D9D4FF"><span style="width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#5ED6F7,#8378FF);display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5M9 8V2M15 8V2M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8z"></path></svg></span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:800">Integrations</span><span style="font-size:12.5px;color:#6B7280">Connect your tools</span></span></a>
+      <a href="Trevio%20Integrations%20Developers.dc.html#developers" onClick="{{ closeMenu }}" style="padding:16px;border-radius:16px;background:#F8F9FB;border:1px solid #EEF0F4;display:flex;flex-direction:column;gap:10px;color:#1A1A2E;min-height:44px" style-hover="color:#1A1A2E;border-color:#D9D4FF"><span style="width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#5ED6F7,#8378FF);display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16"></path></svg></span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:800">Developers</span><span style="font-size:12.5px;color:#6B7280">API &amp; docs</span></span></a>
+      <a href="Trevio%20About%20Contact.dc.html" onClick="{{ closeMenu }}" style="padding:16px;border-radius:16px;background:#F8F9FB;border:1px solid #EEF0F4;display:flex;flex-direction:column;gap:10px;color:#1A1A2E;min-height:44px" style-hover="color:#1A1A2E;border-color:#D9D4FF"><span style="width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#5ED6F7,#8378FF);display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM12 16v-4M12 8h.01"></path></svg></span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:800">About</span><span style="font-size:12.5px;color:#6B7280">Our mission</span></span></a>
+      <a href="Trevio%20About%20Contact.dc.html#contact-form" onClick="{{ closeMenu }}" style="padding:16px;border-radius:16px;background:#F8F9FB;border:1px solid #EEF0F4;display:flex;flex-direction:column;gap:10px;color:#1A1A2E;min-height:44px" style-hover="color:#1A1A2E;border-color:#D9D4FF"><span style="width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#5ED6F7,#8378FF);display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zM22 6l-10 7L2 6"></path></svg></span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:800">Contact</span><span style="font-size:12.5px;color:#6B7280">Talk to our team</span></span></a>
+    </div>
+    <a href="https://wa.me/97466005518" style="height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:15.5px;font-weight:800;color:#fff;background:#25D366" style-hover="color:#fff;filter:brightness(1.05)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>Chat on WhatsApp · +974 66005518</a>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <a href="#" style="height:50px;border-radius:14px;border:1.5px solid #DADCE6;display:flex;align-items:center;justify-content:center;font-weight:700;color:#1A1A2E">Login</a>
+      <a href="#" style="height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;background:linear-gradient(100deg,#5B247A,#8378FF 70%,#5ED6F7 140%)">Sign Up</a>
+    </div>
+  </div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1440, step: 0, menu: false };
+  componentDidMount() {
+    this.onR = () => this.setState({ w: window.innerWidth, menu: window.innerWidth < 1100 ? this.state.menu : false });
+    window.addEventListener('resize', this.onR);
+    this.t = setInterval(() => this.setState(s => ({ step: s.step + 1 })), 2600);
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this.onR); clearInterval(this.t); }
+
+  renderVals() {
+    const h = React.createElement;
+    const { w, step, menu } = this.state;
+    const isWide = w >= 1100, isMobile = w < 720;
+    const CH = [
+      { name: 'WhatsApp', bg: '#25D366', icon: 'M7.9 20A9 9 0 1 0 4 16.1L2 22Z' },
+      { name: 'Instagram', bg: 'linear-gradient(45deg,#F58529,#DD2A7B 50%,#8134AF)', dot: '#DD2A7B', icon: 'M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zM16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01' },
+      { name: 'Facebook', bg: '#1877F2', icon: 'M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z' },
+      { name: 'TikTok', bg: '#111111', icon: 'M9 12a4 4 0 1 0 4 4V3a5 5 0 0 0 5 5' },
+      { name: 'Web Chat', bg: '#8378FF', icon: 'M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2zM8 10h.01M12 10h.01M16 10h.01' }
+    ];
+    const convs = [
+      { name: 'Noura Al-Thani', initials: 'NA', ch: 0, dir: 'rtl', intent: 'Order status', msg: 'هل طلبي رقم ٤٨٢١ في الطريق اليوم؟', ai: 'نعم نورة، غادر طلبك مستودع الدوحة ويصل قبل الساعة ٢ ظهرًا.' },
+      { name: 'Omar Haddad', initials: 'OH', ch: 1, dir: 'ltr', intent: 'Product question', msg: 'Do you have the linen set in sand?', ai: 'We do! Sand is in stock in every size. Shall I reserve one at The Pearl store?' },
+      { name: 'Priya Nair', initials: 'PN', ch: 2, dir: 'ltr', intent: 'Booking change', msg: 'Can I move my appointment to Thursday evening?', ai: 'Of course — Thursday at 6:00 PM is open. Shall I confirm it?' },
+      { name: 'Lina Saeed', initials: 'LS', ch: 3, dir: 'ltr', intent: 'Promo', msg: 'Saw your video — is the Eid offer still on?', ai: 'Yes! 20% off until Sunday. Here’s your personal code: EID20.' },
+      { name: 'Sara Lindqvist', initials: 'SL', ch: 4, dir: 'ltr', intent: 'Pre-sales', msg: 'How does Arabic support work for agents?', ai: 'Replies can be drafted in Arabic or English to match each customer, with one-click translation.' }
+    ];
+    const active = step % 5, times = ['now', '1m', '4m', '9m', '15m'];
+    const inbox = [0, 1, 2, 3, 4].map(i => {
+      const c = convs[(step - i + 500) % 5];
+      return { name: c.name, initials: c.initials, preview: c.msg, time: times[i], chColor: CH[c.ch].dot || CH[c.ch].bg, bg: i === 0 ? '#F3F1FF' : 'transparent' };
+    });
+    const c = convs[active];
+    const paths = [0, 1, 2, 3, 4].map(i => { const x = 50 + 100 * i; return `M${x} 2 C${x} 42 250 30 250 70`; });
+    const dotColor = ['#25D366', '#DD2A7B', '#1877F2', '#111111', '#8378FF'];
+    const flowSvg = h('svg', { viewBox: '0 0 500 72', width: '100%', style: { display: 'block', overflow: 'visible' } },
+      h('defs', null, h('linearGradient', { id: 'flowG', gradientUnits: 'userSpaceOnUse', x1: 0, y1: 0, x2: 0, y2: 72 }, h('stop', { offset: '0', stopColor: '#5ED6F7' }), h('stop', { offset: '1', stopColor: '#8378FF' }))),
+      paths.map((d, i) => h('path', { key: 'p' + i, d, fill: 'none', stroke: i === active ? 'url(#flowG)' : '#D9DAEE', strokeWidth: i === active ? 2.2 : 1.3, strokeDasharray: i === active ? undefined : '3 5' })),
+      paths.map((d, i) => h('circle', { key: 'c' + i, r: 3.4, fill: dotColor[i] }, h('animateMotion', { dur: '2.4s', repeatCount: 'indefinite', begin: `${(i * 0.48).toFixed(2)}s`, path: d }))),
+      h('circle', { cx: 250, cy: 70, r: 5, fill: '#8378FF' }));
+
+    const conn = (side) => {
+      const ys = side === 'L' ? [6, 28, 50, 72, 94] : [16.7, 50, 83.3];
+      const d = ys.map(y => side === 'L' ? `M0 ${y} C50 ${y} 50 50 100 50` : `M0 50 C50 50 50 ${y} 100 ${y}`);
+      const id = 'cg' + side;
+      return h('svg', { viewBox: '0 0 100 100', preserveAspectRatio: 'none', style: { position: 'absolute', inset: 0, width: '100%', height: '100%', overflow: 'visible' } },
+        h('defs', null, h('linearGradient', { id, x1: 0, y1: 0, x2: 1, y2: 0 }, h('stop', { offset: '0', stopColor: side === 'L' ? '#5ED6F7' : '#8378FF' }), h('stop', { offset: '1', stopColor: side === 'L' ? '#8378FF' : '#1BCECF' }))),
+        d.map((p, i) => h('path', { key: i, d: p, fill: 'none', stroke: `url(#${id})`, strokeWidth: 2, vectorEffect: 'non-scaling-stroke', strokeDasharray: '4 5' },
+          h('animate', { attributeName: 'stroke-dashoffset', from: 18, to: 0, dur: '1.2s', repeatCount: 'indefinite' }))));
+    };
+
+    const pillars = [
+      { name: 'Communicate', tag: 'Inbox · Campaigns · Chat', icon: 'M7.9 20A9 9 0 1 0 4 16.1L2 22Z', bullets: ['Shared team inbox across all five channels', 'WhatsApp broadcasts and templates at scale', 'Bilingual replies with instant translation'] },
+      { name: 'Automate', tag: 'AI · Flows · Routing', icon: 'M13 2 3 14h9l-1 8 10-12h-9l1-8z', bullets: ['AI agents that resolve routine requests 24/7', 'No-code flows, routing rules and SLAs', 'Smooth hand-off from AI to a human'] },
+      { name: 'Integrate', tag: 'CRM · Commerce · API', icon: 'M12 22v-5M9 8V2M15 8V2M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8z', bullets: ['Shopify, HubSpot, Salesforce, Zoho and more', 'Mini Apps inside every conversation', 'Open REST API, webhooks and MCP'] }
+    ];
+    const why = [
+      { title: 'One unified inbox', desc: 'Every channel and every customer in one shared, real-time workspace.', icon: 'M22 12h-6l-2 3h-4l-2-3H2M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z' },
+      { title: 'AI built in', desc: 'Agents and copilots that answer, summarise and translate in your brand voice.', icon: 'M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.13-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.13a.5.5 0 0 1 .96 0L14.06 8.5A2 2 0 0 0 15.5 9.94l6.13 1.58a.5.5 0 0 1 0 .96L15.5 14.06a2 2 0 0 0-1.44 1.44l-1.58 6.13a.5.5 0 0 1-.96 0z' },
+      { title: 'Arabic & English', desc: 'Right-to-left support and Arabic-aware AI, designed for the region.', icon: 'm5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6' },
+      { title: 'Campaigns that convert', desc: 'Segmented WhatsApp broadcasts with delivery, read and revenue tracking.', icon: 'm3 11 18-5v12L3 14v-3zM11.6 16.8a3 3 0 1 1-5.8-1.6' },
+      { title: 'Real-time analytics', desc: 'Response times, CSAT and revenue by channel, agent and campaign.', icon: 'M3 3v18h18M18 17V9M13 17V5M8 17v-3' },
+      { title: 'Enterprise security', desc: 'Role-based access, SSO, audit logs and encryption at rest and in transit.', icon: 'M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z' }
+    ];
+    const industries = [
+      { name: 'Retail & E-commerce', icon: 'M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0' },
+      { name: 'Hospitality', icon: 'M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9' },
+      { name: 'Healthcare', icon: 'M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z' },
+      { name: 'Real Estate', icon: 'm3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zM9 22V12h6v10' },
+      { name: 'Education', icon: 'M22 10 12 5 2 10l10 5 10-5zM6 12v5c3 3 9 3 12 0v-5' },
+      { name: 'Financial Services', icon: 'M3 22h18M6 18v-7M10 18v-7M14 18v-7M18 18v-7M12 2l9 5H3z' },
+      { name: 'Automotive', icon: 'M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9L18 10l-2.7-3.6A2 2 0 0 0 13.7 6H8.3a2 2 0 0 0-1.6.8L4 10l-2 .6C1.4 10.8 1 11.5 1 12.2V16c0 .6.4 1 1 1h2M7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM17 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM9 17h6' },
+      { name: 'Government', icon: 'M12 2 2 7h20zM4 10v8M9 10v8M15 10v8M20 10v8M2 22h20M2 18h20' }
+    ];
+
+    return {
+      isWide, isNarrow: !isWide, menuOpen: menu && !isWide,
+      menuIcon: menu ? 'M18 6 6 18M6 6l12 12' : 'M4 7h16M4 12h16M4 17h16',
+      toggleMenu: () => this.setState(s => ({ menu: !s.menu })),
+      closeMenu: () => this.setState({ menu: false }),
+      waBottom: isWide ? '24px' : 'calc(96px + env(safe-area-inset-bottom))', waRight: isWide ? '24px' : '16px', navPad: isWide ? '0px' : 'calc(84px + env(safe-area-inset-bottom))',
+      heroChannels: CH.map((ch, i) => ({ ...ch,
+        shadow: i === active ? '0 0 0 3px #fff, 0 0 0 5px #8378FF, 0 14px 28px -8px rgba(131,120,255,0.6)' : '0 8px 18px -8px rgba(26,26,46,0.35)',
+        tf: i === active ? 'translateY(-4px) scale(1.05)' : 'none' })),
+      stripChannels: CH.map((ch, i) => ({ ...ch, divider: i === 0 || isMobile ? 'none' : '1px solid #E6E7EE' })),
+      flowSvg, inbox, cur: { ...c, chName: CH[c.ch].name },
+      dashCols: isMobile ? '1fr' : '230px 1fr', showThread: !isMobile,
+      why, whyCols: w >= 1000 ? 'repeat(3,minmax(0,1fr))' : w >= 640 ? 'repeat(2,minmax(0,1fr))' : '1fr',
+      pillars, diagramWide: w >= 1040, diagramStacked: w < 1040,
+      connLeft: conn('L'), connRight: conn('R'),
+      industries, indCols: w >= 1000 ? 'repeat(4,minmax(0,1fr))' : w >= 560 ? 'repeat(2,minmax(0,1fr))' : '1fr'
+    };
+  }
+}
+</script>
+</body>
+</html>
