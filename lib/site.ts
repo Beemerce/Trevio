@@ -1,9 +1,9 @@
-/** Site-wide links. Login / Sign Up point nowhere yet in the designs; set them here once the app URLs exist. */
+/** Site-wide links used by the header, mobile nav, footer and page CTAs. */
 export const SITE = {
   name: 'Trevio AI Solutions',
   url: 'https://www.trevio.ai',
-  loginUrl: '#',
-  signUpUrl: '#',
+  loginUrl: 'https://panel.trevio.ai/login',
+  signUpUrl: 'https://panel.trevio.ai/signup',
   devPortalUrl: 'https://dev.wa-api.cloud',
   email: 'hello@trevio.ai',
   whatsappDisplay: '+974 66005518',

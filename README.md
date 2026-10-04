@@ -43,7 +43,6 @@ Payload: `{ source, submittedAt, name, company, email, phone, subject, message }
 ## Still placeholder (from the designs)
 
 - Logo: gradient "t" tile and text wordmark in `components/chrome/Logo.tsx`.
-- Login / Sign Up / "Get Started" URLs: `#` in `lib/site.ts`.
 - Social links, legal pages and Careers: `#`.
 - Prices, customer copy and integration lists are design copy and need confirming.
 
