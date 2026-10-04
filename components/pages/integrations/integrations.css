@@ -1,0 +1,21 @@
+.int-web { height: 520px; }
+.int-hub { width: 148px; height: 148px; }
+.int-node { width: 64px; height: 64px; font-size: 19px; }
+.int-node-outer { width: 56px; height: 56px; font-size: 16px; }
+.int-split { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); }
+.int-res { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.int-recipes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+@media (max-width: 1099.98px) { .int-res { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 999.98px) { .int-split { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 759.98px) {
+  .int-res { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .int-recipes { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 639.98px) {
+  .int-web { height: 360px; }
+  .int-hub { width: 110px; height: 110px; }
+  .int-node { width: 46px; height: 46px; font-size: 13px; }
+  .int-node-outer { width: 40px; height: 40px; font-size: 13px; }
+}
+@media (max-width: 519.98px) { .int-res { grid-template-columns: minmax(0, 1fr); } }

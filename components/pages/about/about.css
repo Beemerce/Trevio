@@ -1,0 +1,4 @@
+.ab-split { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.ab-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 999.98px) { .ab-split { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 559.98px) { .ab-fields { grid-template-columns: minmax(0, 1fr); } }

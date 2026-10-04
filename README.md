@@ -1,25 +1,50 @@
-# CODING AGENTS: READ THIS FIRST
+# Trevio AI website
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+Marketing site for Trevio AI Solutions, built with Next.js (App Router) and React from the Claude Design handoff in `design-handoff/`.
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+## Run
 
-## What you should do — IMPORTANT
+```bash
+npm install
+npm run dev        # http://localhost:3000
+npm run build && npm start
+```
 
-**Read the chat transcripts first.** There are 1 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+If `next dev` fails to load Google Fonts behind a proxy, use `npx next dev --webpack`.
 
-**Find the primary design file under `project/` and read it top to bottom.** The chat transcripts will tell you which file the user was last iterating on. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+## Pages
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+| Route | Design file |
+| --- | --- |
+| `/` | Trevio Home |
+| `/features` | Trevio Features |
+| `/integrations` | Trevio Integrations Developers (`#developers` jumps to the developer half) |
+| `/ai-first` | Trevio AI First |
+| `/pricing` | Trevio Pricing |
+| `/about` | Trevio About Contact (`/contact` redirects to `/about#contact-form`) |
 
-## About the design files
+## Structure
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+- `app/layout.tsx`: fonts (Plus Jakarta Sans, Noto Sans Arabic), shared header, footer and mobile nav.
+- `components/chrome/`: sticky header (desktop nav ≥ 1100px), footer, app-style bottom tab bar with the "More" sheet, WhatsApp button.
+- `components/pages/<page>/`: one client view per page plus its responsive CSS. The prototype switched layouts by reading `window.innerWidth`; here every breakpoint is a CSS media query, so mobile renders correctly on first paint.
+- `app/globals.css`: brand tokens, base styles and the hover classes (`hv-*`).
+- `lib/site.ts`: Login / Sign Up URLs, WhatsApp number, developer portal, nav items.
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+## Contact form
 
-## Bundle contents
+The form on `/about` posts JSON to `/api/contact`, which validates it and forwards it to your Trevio webhook. Copy `.env.example` to `.env.local` and set:
 
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `Trevio AI website mockups` project files (HTML prototypes, assets, components)
+- `TREVIO_CONTACT_WEBHOOK_URL`: required. Without it the API returns 503 and the form shows an error.
+- `TREVIO_CONTACT_WEBHOOK_SECRET`: optional, sent as `Authorization: Bearer <secret>`.
+
+Payload: `{ source, submittedAt, name, company, email, phone, subject, message }`.
+
+## Still placeholder (from the designs)
+
+- Logo: gradient "t" tile and text wordmark in `components/chrome/Logo.tsx`.
+- Login / Sign Up / "Get Started" URLs: `#` in `lib/site.ts`.
+- Social links, legal pages and Careers: `#`.
+- Prices, customer copy and integration lists are design copy and need confirming.
+
+`scripts/dc2jsx.py` is the one-off converter used to turn the `.dc.html` templates into JSX before hand-editing.
