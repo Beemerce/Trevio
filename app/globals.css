@@ -1,0 +1,92 @@
+/* Trevio design tokens and base styles. Brand values come from the Claude Design handoff. */
+:root {
+  --cyan: #5ED6F7;
+  --purple: #8378FF;
+  --deep-purple: #5B247A;
+  --teal: #1BCECF;
+  --bg: #FFFFFF;
+  --bg-soft: #F8F9FB;
+  --navy: #0D1117;
+  --night-purple: #1A0A2E;
+  --ink: #1A1A2E;
+  --muted: #6B7280;
+  --grad-brand: linear-gradient(100deg, #5B247A, #8378FF 70%, #5ED6F7 140%);
+  --grad-icon: linear-gradient(135deg, #5ED6F7, #8378FF);
+  --font-sans: var(--font-jakarta), system-ui, sans-serif;
+  --font-ar: var(--font-jakarta), var(--font-arabic), sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  /* Desktop chrome (top nav) shows at >= 1100px; below that the app-style tab bar takes over. */
+  --tabbar-pad: calc(84px + env(safe-area-inset-bottom));
+}
+
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: #FFFFFF;
+  color: #1A1A2E;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+* { box-sizing: border-box; }
+a { color: #5B247A; text-decoration: none; }
+a:hover { color: #8378FF; }
+button, input, select, textarea { font-family: inherit; }
+input::placeholder, textarea::placeholder { color: #9CA3AF; }
+:focus-visible { outline: 2px solid #8378FF; outline-offset: 2px; }
+
+.site { min-height: 100vh; background: #FFFFFF; overflow-x: clip; }
+
+/* Visibility helpers for the 1100px chrome breakpoint */
+@media (max-width: 1099.98px) {
+  .site { padding-bottom: var(--tabbar-pad); }
+  .only-wide { display: none !important; }
+}
+@media (min-width: 1100px) {
+  .only-narrow { display: none !important; }
+}
+
+/* Hover states. Inline styles carry the resting look, so hover rules need !important. */
+.hv-white:hover { color: #fff !important; }
+.hv-ink:hover { color: #1A1A2E !important; }
+.hv-purple:hover { color: #5B247A !important; }
+.hv-teal:hover { color: #1BCECF !important; }
+.hv-violet:hover { color: #8378FF !important; }
+.hv-nav:hover { background: #F4F2FF !important; color: #5B247A !important; }
+.hv-tile:hover { color: #1A1A2E !important; border-color: #D9D4FF !important; }
+.hv-social:hover { background: linear-gradient(135deg, #5ED6F7, #8378FF) !important; color: #fff !important; }
+.hv-bright:hover { color: #fff !important; filter: brightness(1.07); }
+.hv-bright-sm:hover { color: #fff !important; filter: brightness(1.05); }
+.hv-brightness:hover { filter: brightness(1.07); }
+.hv-pop:hover { color: #fff !important; transform: scale(1.07) !important; }
+.hv-lift:hover { color: #5B247A !important; transform: translateY(-1px) !important; }
+.hv-ghost:hover { color: #fff !important; background: rgba(255, 255, 255, 0.14) !important; }
+.hv-outline:hover { border-color: #8378FF !important; color: #5B247A !important; }
+.hv-outline-light:hover { color: #5B247A !important; border-color: #8378FF !important; background: #fff !important; }
+.hv-navy:hover { color: #fff !important; background: #0D1117 !important; }
+.hv-teal-btn:hover { color: #0D1117 !important; background: #3ADBDC !important; }
+.hv-dark-glow:hover {
+  color: #fff !important;
+  background: linear-gradient(#161B2A, #161B2A) padding-box, linear-gradient(100deg, #5ED6F7, #8378FF, #1BCECF) border-box !important;
+  box-shadow: 0 0 30px -6px rgba(131, 120, 255, 0.6) !important;
+}
+.hv-card:hover, .hv-card-ink:hover, .hv-card-lg:hover {
+  border-color: transparent !important;
+  background: linear-gradient(#fff, #fff) padding-box, linear-gradient(135deg, #5ED6F7, #8378FF) border-box !important;
+  transform: translateY(-2px) !important;
+}
+.hv-card:hover { box-shadow: 0 20px 40px -22px rgba(131, 120, 255, 0.5) !important; }
+.hv-card-ink:hover { color: #1A1A2E !important; }
+.hv-card-lg:hover { box-shadow: 0 22px 44px -22px rgba(131, 120, 255, 0.5) !important; transform: translateY(-3px) !important; }
+.hv-pill:hover {
+  border-color: transparent !important;
+  color: #fff !important;
+  background: linear-gradient(100deg, #5B247A, #8378FF 60%, #5ED6F7) !important;
+  box-shadow: 0 14px 30px -14px rgba(131, 120, 255, 0.7) !important;
+}
+
+.fc-field:focus { border-color: #8378FF !important; box-shadow: 0 0 0 4px rgba(131, 120, 255, 0.15) !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

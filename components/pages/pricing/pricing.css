@@ -1,0 +1,12 @@
+/* Pricing: three plans side by side from 960px; below that they stack with Growth first. */
+.pr-plans { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.pr-growth { order: 2; padding: 42px 32px; transform: scale(1.04); }
+.pr-addons { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+
+@media (max-width: 1099.98px) { .pr-addons { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 959.98px) {
+  .pr-plans { grid-template-columns: minmax(0, 1fr); }
+  .pr-growth { order: 0; padding: 38px 30px; transform: none; }
+}
+@media (max-width: 719.98px) { .pr-addons { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 479.98px) { .pr-addons { grid-template-columns: minmax(0, 1fr); } }

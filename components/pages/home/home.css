@@ -1,0 +1,26 @@
+/* Home: breakpoints from the prototype's width checks, expressed as media queries. */
+.home-dash { grid-template-columns: 230px 1fr; }
+.home-strip-item + .home-strip-item { border-left: 1px solid #E6E7EE; }
+.home-why { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.home-ind { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.home-diagram-stacked { display: none !important; }
+
+@media (max-width: 1039.98px) {
+  .home-diagram-wide { display: none !important; }
+  .home-diagram-stacked { display: flex !important; }
+}
+@media (max-width: 999.98px) {
+  .home-why { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-ind { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 719.98px) {
+  .home-dash { grid-template-columns: 1fr; }
+  .home-thread { display: none !important; }
+  .home-strip-item + .home-strip-item { border-left: none; }
+}
+@media (max-width: 639.98px) {
+  .home-why { grid-template-columns: 1fr; }
+}
+@media (max-width: 559.98px) {
+  .home-ind { grid-template-columns: 1fr; }
+}

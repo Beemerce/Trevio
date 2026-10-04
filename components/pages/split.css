@@ -1,0 +1,7 @@
+/* Alternating two-column feature rows (Features, AI First): side by side from 1000px, visual first on alternate rows. */
+.split { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.split-vis-first { order: -1; }
+@media (max-width: 999.98px) {
+  .split { grid-template-columns: minmax(0, 1fr); }
+  .split-vis-first { order: 0; }
+}

@@ -1,0 +1,3 @@
+.ai-ind { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1099.98px) { .ai-ind { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 559.98px) { .ai-ind { grid-template-columns: minmax(0, 1fr); } }

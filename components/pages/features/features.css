@@ -1,0 +1,8 @@
+.ft-inbox { grid-template-columns: 150px minmax(0, 1fr); }
+.ft-ai { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.ft-mini { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+@media (max-width: 959.98px) { .ft-ai { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 559.98px) {
+  .ft-inbox, .ft-mini { grid-template-columns: minmax(0, 1fr); }
+  .ft-side { display: none !important; }
+}
