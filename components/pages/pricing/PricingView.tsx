@@ -133,7 +133,7 @@ function Check() {
 
 type Billing = 'monthly' | 'annual';
 
-function PlanCard({ plan, billing }: { plan: Plan; billing: Billing }) {
+function PlanCard({ plan, billing, order }: { plan: Plan; billing: Billing; order: number }) {
   const { popular } = plan;
   const monthly = billing === 'monthly';
   return (
@@ -153,6 +153,7 @@ function PlanCard({ plan, billing }: { plan: Plan; billing: Billing }) {
               gap: 24,
             }
           : {
+              order,
               borderRadius: 18,
               border: '1px solid #E8E9EF',
               background: '#fff',
@@ -381,8 +382,8 @@ export function PricingView() {
             alignItems: 'stretch',
           }}
         >
-          {PLANS.map((plan) => (
-            <PlanCard key={plan.name} plan={plan} billing={billing} />
+          {PLANS.map((plan, i) => (
+            <PlanCard key={plan.name} plan={plan} billing={billing} order={i + 1} />
           ))}
         </div>
         <div style={{ maxWidth: 1180, margin: '48px auto 0', padding: '0 24px' }}>
