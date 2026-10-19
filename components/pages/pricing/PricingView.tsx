@@ -17,6 +17,7 @@ type Plan = {
   name: string;
   tagline: string;
   price: string;
+  monthly: string;
   href: string;
   popular?: boolean;
   features: string[];
@@ -29,6 +30,7 @@ const PLANS: Plan[] = [
     name: 'Startup Plan',
     tagline: 'Perfect for small businesses and individuals',
     price: '2,000',
+    monthly: '200',
     href: `${SIGNUP}startup`,
     features: [
       'Up to 5 User Agents',
@@ -49,6 +51,7 @@ const PLANS: Plan[] = [
     name: 'Growth Plan',
     tagline: 'Best for growing businesses and teams',
     price: '5,000',
+    monthly: '500',
     href: `${SIGNUP}medium`,
     popular: true,
     features: [
@@ -76,6 +79,7 @@ const PLANS: Plan[] = [
     name: 'Premium Plan',
     tagline: 'Ideal for large businesses and enterprises',
     price: '10,000',
+    monthly: '1,000',
     href: `${SIGNUP}premium`,
     features: [
       '100 User Agents',
@@ -127,8 +131,11 @@ function Check() {
   );
 }
 
-function PlanCard({ plan }: { plan: Plan }) {
+type Billing = 'monthly' | 'annual';
+
+function PlanCard({ plan, billing }: { plan: Plan; billing: Billing }) {
   const { popular } = plan;
+  const monthly = billing === 'monthly';
   return (
     <div
       className={popular ? 'pr-growth' : undefined}
@@ -193,11 +200,13 @@ function PlanCard({ plan }: { plan: Plan }) {
               ...(popular ? { background: 'linear-gradient(90deg,#5B247A,#8378FF)', ...GRADIENT_TEXT } : {}),
             }}
           >
-            {plan.price}
+            {monthly ? plan.monthly : plan.price}
           </span>
-          <span style={{ fontSize: 14, color: '#6B7280' }}>/yr</span>
+          <span style={{ fontSize: 14, color: '#6B7280' }}>{monthly ? '/mo' : '/yr'}</span>
         </div>
-        <span style={{ fontSize: 13, fontWeight: 700, color: '#0B8F90' }}>Save up to 20%</span>
+        <span style={{ fontSize: 13, fontWeight: 700, color: '#0B8F90' }}>
+          {monthly ? `or QAR ${plan.price}/yr with annual billing` : 'Save up to 20%'}
+        </span>
       </div>
       <div style={{ height: 1, background: popular ? 'rgba(131,120,255,0.22)' : '#EEF0F4' }}></div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 13, fontSize: 15, lineHeight: 1.45 }}>
@@ -248,6 +257,7 @@ function PlanCard({ plan }: { plan: Plan }) {
 
 export function PricingView() {
   const [open, setOpen] = useState(0);
+  const [billing, setBilling] = useState<Billing>('annual');
   const faqs = FAQ.map(([q, a], i) => ({
     q,
     a,
@@ -311,24 +321,38 @@ export function PricingView() {
               aria-label="Billing period"
               style={{ display: 'inline-flex', padding: 4, borderRadius: 999, background: '#F3F4F8', fontSize: 14, fontWeight: 700 }}
             >
-              <span
-                aria-disabled="true"
-                title="Monthly billing is not available"
-                style={{ padding: '8px 18px', borderRadius: 999, color: '#9CA3AF', cursor: 'not-allowed' }}
-              >
-                Monthly
-              </span>
-              <span
-                aria-current="true"
+              <button
+                type="button"
+                onClick={() => setBilling('monthly')}
+                aria-pressed={billing === 'monthly'}
                 style={{
                   padding: '8px 18px',
                   borderRadius: 999,
-                  color: '#fff',
-                  background: 'linear-gradient(100deg,#5B247A,#8378FF)',
+                  border: 'none',
+                  cursor: 'pointer',
+                  font: 'inherit',
+                  color: billing === 'monthly' ? '#fff' : '#6B7280',
+                  background: billing === 'monthly' ? 'linear-gradient(100deg,#5B247A,#8378FF)' : 'transparent',
+                }}
+              >
+                Monthly
+              </button>
+              <button
+                type="button"
+                onClick={() => setBilling('annual')}
+                aria-pressed={billing === 'annual'}
+                style={{
+                  padding: '8px 18px',
+                  borderRadius: 999,
+                  border: 'none',
+                  cursor: 'pointer',
+                  font: 'inherit',
+                  color: billing === 'annual' ? '#fff' : '#6B7280',
+                  background: billing === 'annual' ? 'linear-gradient(100deg,#5B247A,#8378FF)' : 'transparent',
                 }}
               >
                 Annually
-              </span>
+              </button>
             </div>
             <span
               style={{
@@ -358,7 +382,7 @@ export function PricingView() {
           }}
         >
           {PLANS.map((plan) => (
-            <PlanCard key={plan.name} plan={plan} />
+            <PlanCard key={plan.name} plan={plan} billing={billing} />
           ))}
         </div>
         <div style={{ maxWidth: 1180, margin: '48px auto 0', padding: '0 24px' }}>
