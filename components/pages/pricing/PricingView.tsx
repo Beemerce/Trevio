@@ -6,8 +6,9 @@ import { Fragment, useState } from 'react';
 import './pricing.css';
 
 const FAQ: [string, string][] = [
-  ['Are prices billed monthly or annually?', 'Both. Pay monthly for flexibility, or pay annually and get 2 months free. All prices are in QAR, and you can switch from monthly to annual billing at any time.'],
+  ['Are prices billed monthly or annually?', 'Both. Pay monthly for flexibility, or pay annually and get 2 months free. All prices are in QAR, and a monthly plan can be upgraded to annual billing at any time.'],
   ['Is there a free trial?', 'Yes. Every plan starts with a 3-day free trial, so your team can connect channels and test the platform before committing.'],
+  ['How does AI work, and how is AI usage billed?', 'Trevio connects to OpenAI and other AI services through its REST API module, and to MCP servers. You bring your own AI account, and AI usage is billed directly by that provider at their published rates. Trevio does not charge for AI usage.'],
   ['Can I change plans later?', 'Absolutely. Upgrade at any time and we’ll credit the unused portion of your current plan. Downgrades take effect at renewal.'],
   ['Do you help with WhatsApp Business API setup?', 'Yes. Our Doha team handles verification, number migration and template approvals as part of onboarding on every plan.'],
 ];
@@ -566,44 +567,6 @@ export function PricingView() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
-                  <path d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.13-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.13a.5.5 0 0 1 .96 0L14.06 8.5A2 2 0 0 0 15.5 9.94l6.13 1.58a.5.5 0 0 1 0 .96L15.5 14.06a2 2 0 0 0-1.44 1.44l-1.58 6.13a.5.5 0 0 1-.96 0z"></path>
-                </svg>
-              </span>
-              <span style={{ fontSize: 16, fontWeight: 700 }}>AI response packs</span>
-              <span style={{ fontSize: 14, lineHeight: 1.55, color: '#6B7280' }}>Top up AI replies for busy seasons.</span>
-            </div>
-            <div
-              style={{
-                padding: 22,
-                borderRadius: 14,
-                background: '#fff',
-                border: '1px solid #E6E7EE',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 12,
-              }}
-            >
-              <span
-                style={{
-                  width: 42,
-                  height: 42,
-                  borderRadius: 12,
-                  background: 'linear-gradient(135deg,#5ED6F7,#8378FF)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#fff"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path>
                 </svg>
               </span>
@@ -731,7 +694,7 @@ export function PricingView() {
             <span style={{ fontSize: 18, fontWeight: 800 }}>Third-party costs are billed separately</span>
             <p style={{ margin: 0, fontSize: 15, lineHeight: 1.7, color: '#4B5163', maxWidth: 680, textWrap: 'pretty' }}>
               Plan prices cover the Trevio platform only. WhatsApp conversation fees charged by Meta, payment gateway fees and usage of
-              external AI models connected through your own API keys are billed separately by those providers, at their published rates.
+              AI services connected through the REST API module or MCP servers are billed separately by those providers, at their published rates.
               Prices shown exclude any applicable taxes.
             </p>
           </div>
