@@ -1,9 +1,14 @@
 import Script from 'next/script';
 import { SITE } from '@/lib/site';
 
-/** wa-api.cloud web chat widget. Replaces the design's floating WhatsApp button. */
+/** wa-api.cloud web chat widget, opened as a sidebar. Replaces the design's floating WhatsApp button. */
 export function LiveChat() {
-  const config = { gatewayUrl: SITE.webchat.gatewayUrl, siteKey: SITE.webchat.siteKey };
+  const config = {
+    gatewayUrl: SITE.webchat.gatewayUrl,
+    siteKey: SITE.webchat.siteKey,
+    layout: 'sidebar',
+    sidebarWidth: 390,
+  };
   return (
     <>
       <Script id="live-chat-init" strategy="afterInteractive">
